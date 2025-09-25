@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Switch Controller/1.0.0": {
+        "runtime": {
+          "Switch Controller.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Switch Controller/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
