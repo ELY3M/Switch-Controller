@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualBasic.Logging;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Net.Sockets;
 using System.Net;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using System;
 using System.Text;
 
 namespace Switch_Controller
@@ -13,7 +10,13 @@ namespace Switch_Controller
     {
         private static bool offline = true;
         private static Socket socket;
-        //private static USBBot usb;
+
+        bool L_StickUp;
+        bool L_StickRight;
+        bool L_StickLeft;
+        bool L_StickDown;
+        bool resetted = true;
+        private MovingDirection currentDirection = MovingDirection.Null;
 
 
         private static readonly Encoding Encoder = Encoding.UTF8;
@@ -402,11 +405,8 @@ namespace Switch_Controller
                             offline = false;
                             //need to connect to sysbotbase for switch control//
 
-
-
-
-
-
+                            //start controller timer//  
+                            controllertimer.Start();
 
 
 
@@ -701,36 +701,49 @@ namespace Switch_Controller
 
         */
 
+        public enum MovingDirection
+        {
+            Up,
+            Down,
+            Left,
+            Right,
+            UpRight,
+            UpLeft,
+            DownRight,
+            DownLeft,
+            Null
+        }
+
         private void LstickMouseUp(object sender, MouseEventArgs e)
         {
-            //W = false;
-            //A = false;
-            //S = false;
-            //D = false;
+            L_StickUp = false;
+            L_StickRight = false;
+            L_StickLeft = false;
+            L_StickDown = false;
         }
 
         private void LstickUPBtn_MouseDown(object sender, MouseEventArgs e)
         {
-            //W = true;
-            LstickUp();
+            L_StickUp = true;
+            //LstickUp();
         }
 
         private void LstickRIGHTBtn_MouseDown(object sender, MouseEventArgs e)
         {
-            //D = true;
-            LstickRight();
+            L_StickRight = true;
+            //LstickRight();
         }
 
         private void LstickDOWNBtn_MouseDown(object sender, MouseEventArgs e)
         {
-            //S = true;
-            LstickDown();
+            L_StickDown = true;
+            //LstickDown();
         }
 
         private void LstickLEFTBtn_MouseDown(object sender, MouseEventArgs e)
         {
-            //A = true;
-            LstickLeft();
+            L_StickLeft = true;
+            //LstickLeft();
 
         }
 
@@ -859,7 +872,183 @@ namespace Switch_Controller
 
 
 
+        private void ControllerTimer_Tick(object sender, EventArgs e)
+        {
+            if (!L_StickUp && !L_StickDown && !L_StickLeft && !L_StickRight)
+            {
+                if (!resetted)
+                {
+                    currentDirection = MovingDirection.Null;
+                    resetted = true;
+                    //Debug.Print("Reset Stick");
+                    ResetLeftStick();
+                }
+            }
+            /*
+            else if (W && D)
+            {
+                if (currentDirection != MovingDirection.UpRight)
+                {
+                    currentDirection = MovingDirection.UpRight;
+                    resetted = false;
+                    //Debug.Print("TopRight");
+                    Controller.LstickTopRight();
+                }
+            }
+            else if (W && A)
+            {
+                if (currentDirection != MovingDirection.UpLeft)
+                {
+                    currentDirection = MovingDirection.UpLeft;
+                    resetted = false;
+                    //Debug.Print("TopLeft");
+                    Controller.LstickTopLeft();
+                }
+            }
+            */
+            else if (L_StickUp)
+            {
+                if (currentDirection != MovingDirection.Up)
+                {
+                    currentDirection = MovingDirection.Up;
+                    resetted = false;
+                    //Debug.Print("Up");
+                    LstickUp();
+                }
+            }
+            /*
+            else if (S && D)
+            {
+                if (currentDirection != MovingDirection.DownRight)
+                {
+                    currentDirection = MovingDirection.DownRight;
+                    resetted = false;
+                    //Debug.Print("BottomRight");
+                    Controller.LstickBottomRight();
+                }
+            }
+            else if (S && A)
+            {
+                if (currentDirection != MovingDirection.DownLeft)
+                {
+                    currentDirection = MovingDirection.DownLeft;
+                    resetted = false;
+                    //Debug.Print("BottomLeft");
+                    Controller.LstickBottomLeft();
+                }
+            }
+            */
 
+            else if (L_StickDown)
+            {
+                if (currentDirection != MovingDirection.Down)
+                {
+                    currentDirection = MovingDirection.Down;
+                    resetted = false;
+                    //Debug.Print("Down");
+                    LstickDown();
+                }
+            }
+            else if (L_StickLeft)
+            {
+                if (currentDirection != MovingDirection.Left)
+                {
+                    currentDirection = MovingDirection.Left;
+                    resetted = false;
+                    //Debug.Print("Left");
+                    LstickLeft();
+                }
+            }
+            else if (L_StickRight)
+            {
+                if (currentDirection != MovingDirection.Right)
+                {
+                    currentDirection = MovingDirection.Right;
+                    resetted = false;
+                    //Debug.Print("Right");
+                    LstickRight();
+                }
+            }
+
+/*
+            if (I)
+            {
+                if (!holdingI)
+                {
+                    holdingI = true;
+                    //Debug.Print("Press X");
+                    Controller.PressX();
+                }
+            }
+            else if (!I)
+            {
+                if (holdingI)
+                {
+                    holdingI = false;
+                    //Debug.Print("Release X");
+                    Controller.ReleaseX();
+                }
+            }
+
+            if (J)
+            {
+                if (!holdingJ)
+                {
+                    holdingJ = true;
+                    //Debug.Print("Press Y");
+                    Controller.PressY();
+                }
+            }
+            else if (!J)
+            {
+                if (holdingJ)
+                {
+                    holdingJ = false;
+                    //Debug.Print("Release Y");
+                    Controller.ReleaseY();
+                }
+            }
+
+            if (K)
+            {
+                if (!holdingK)
+                {
+                    holdingK = true;
+                    //Debug.Print("Press B");
+                    Controller.PressB();
+                }
+            }
+            else if (!K)
+            {
+                if (holdingK)
+                {
+                    holdingK = false;
+                    //Debug.Print("Release B");
+                    Controller.ReleaseB();
+                }
+            }
+
+            if (L)
+            {
+                if (!holdingL)
+                {
+                    holdingL = true;
+                    //Debug.Print("Press A");
+                    Controller.PressA();
+                }
+            }
+            else if (!L)
+            {
+                if (holdingL)
+                {
+                    holdingL = false;
+                    //Debug.Print("Release A");
+                    Controller.ReleaseA();
+                }
+            }
+*/
+
+        }
 
 
 

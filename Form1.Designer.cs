@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Connect = new Button();
             ipaddress = new TextBox();
             controllerPanel = new Panel();
@@ -58,6 +59,7 @@
             LstickLEFTBtn = new Button();
             LstickDOWNBtn = new Button();
             LstickUPBtn = new Button();
+            controllertimer = new System.Windows.Forms.Timer(components);
             controllerPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -557,6 +559,11 @@
             LstickUPBtn.MouseDown += LstickUPBtn_MouseDown;
             LstickUPBtn.MouseUp += LstickMouseUp;
             // 
+            // controllertimer
+            // 
+            controllertimer.Interval = 10;
+            controllertimer.Tick += ControllerTimer_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 16F);
@@ -605,5 +612,6 @@
         private Button LstickLEFTBtn;
         private Button LstickDOWNBtn;
         private Button LstickUPBtn;
+        private System.Windows.Forms.Timer controllertimer;
     }
 }
