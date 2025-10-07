@@ -1,5 +1,6 @@
 # Switch Controller  
 
+![Screenshot](screenshot.png)
 
 This app will let you control your switch from your windows computer.   
 
