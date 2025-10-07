@@ -65,11 +65,14 @@
             // 
             // Connect
             // 
+            Connect.AutoSize = true;
             Connect.BackColor = SystemColors.ActiveCaptionText;
+            Connect.FlatStyle = FlatStyle.Flat;
             Connect.ForeColor = SystemColors.ControlLightLight;
             Connect.Location = new Point(241, 12);
+            Connect.Margin = new Padding(5);
             Connect.Name = "Connect";
-            Connect.Size = new Size(75, 23);
+            Connect.Size = new Size(135, 28);
             Connect.TabIndex = 1;
             Connect.Text = "Connect";
             Connect.UseVisualStyleBackColor = false;

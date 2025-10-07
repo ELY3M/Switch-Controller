@@ -322,10 +322,33 @@ namespace Switch_Controller
         private void Connect_Click(object sender, EventArgs e)
         {
 
+            ///MessageBox.Show("offline: "+offline.ToString());
+
+            if (offline == false && Connect.Tag == "disconnect") { 
+                try
+                {
+                    socket.Shutdown(SocketShutdown.Both);
+                    socket.Close();
+                    socket = null;
+                }
+                catch
+                {
+                    //ignore any errors here//
+                }
+                ipaddress.ForeColor = Color.Black;
+                Connect.Tag = @"connect";
+                Connect.Text = @"Connect";
+                offline = true;
+                controllertimer.Stop();
+                return;
+
+            }
+
             ///MessageBox.Show("Ip Address is: "+ipaddress.Text);
+            Connect.Tag = @"connect";
+            Connect.Text = @"Connect";
 
             string ipPattern = @"\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b";
-
             if (!Regex.IsMatch(ipaddress.Text, ipPattern))
             {
                 MessageBox.Show("Not Valid Ip Address!");
@@ -355,6 +378,8 @@ namespace Switch_Controller
                         }
                         catch
                         {
+
+                            ipaddress.ForeColor = Color.Red;
 
                             if (MessageBox.Show("Sys-botbase not responding. Details?", "Error Code : 5318008 - Missing Sys-botbase Error!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                             {
@@ -392,14 +417,17 @@ namespace Switch_Controller
 
                         Invoke((MethodInvoker)delegate
                         {
-                            ///IPAddressInputBackground.BackColor = Color.Green;
+                            
+                            ipaddress.ForeColor = Color.Green;
 
                             Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath.Replace(".exe", ".dll"));
                             config.AppSettings.Settings["ipaddress"].Value = ipaddress.Text;
                             config.Save(ConfigurationSaveMode.Minimal);
 
+                            Connect.Tag = @"disconnect";
+                            Connect.Text = @"Disconnect";
 
-                            MessageBox.Show("Connection Succeeded : " + ipaddress.Text);
+                            ///MessageBox.Show("Connection Succeeded : " + ipaddress.Text);
                             ///
 
                             offline = false;
@@ -416,6 +444,7 @@ namespace Switch_Controller
                     }
                     else
                     {
+                        ipaddress.ForeColor = Color.Red;
                         socket.Close();
                         socket = null;
                         MessageBox.Show("Unable to connect to the Sys-botbase server.\n" +
