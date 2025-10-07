@@ -701,7 +701,7 @@ namespace Switch_Controller
 
         */
 
-        private void LstickMouseUp(object sender, EventArgs e)
+        private void LstickMouseUp(object sender, MouseEventArgs e)
         {
             //W = false;
             //A = false;
@@ -709,25 +709,25 @@ namespace Switch_Controller
             //D = false;
         }
 
-        private void LstickUPBtn_Click(object sender, EventArgs e)
+        private void LstickUPBtn_MouseDown(object sender, MouseEventArgs e)
         {
             //W = true;
             LstickUp();
         }
 
-        private void LstickRIGHTBtn_Click(object sender, EventArgs e)
+        private void LstickRIGHTBtn_MouseDown(object sender, MouseEventArgs e)
         {
             //D = true;
             LstickRight();
         }
 
-        private void LstickDOWNBtn_Click(object sender, EventArgs e)
+        private void LstickDOWNBtn_MouseDown(object sender, MouseEventArgs e)
         {
             //S = true;
             LstickDown();
         }
 
-        private void LstickLEFTBtn_Click(object sender, EventArgs e)
+        private void LstickLEFTBtn_MouseDown(object sender, MouseEventArgs e)
         {
             //A = true;
             LstickLeft();
@@ -825,27 +825,27 @@ namespace Switch_Controller
         }
 
 
-        private void RstickMouseUp(object sender, EventArgs e)
+        private void RstickMouseUp(object sender, MouseEventArgs e)
         {
             ResetRightStick();
         }
 
-        private void RstickUPBtn_Click(object sender, EventArgs e)
+        private void RstickUPBtn_MouseDown(object sender, MouseEventArgs e)
         {
             RstickUp();
         }
 
-        private void RstickRIGHTBtn_Click(object sender, EventArgs e)
+        private void RstickRIGHTBtn_MouseDown(object sender, MouseEventArgs e)
         {
             RstickRight();
         }
 
-        private void RstickDOWNBtn_Click(object sender, EventArgs e)
+        private void RstickDOWNBtn_MouseDown(object sender, MouseEventArgs e)
         {
             RstickDown();
         }
 
-        private void RstickLEFTBtn_Click(object sender, EventArgs e)
+        private void RstickLEFTBtn_MouseDown(object sender, MouseEventArgs e)
         {
             RstickLeft();
         }

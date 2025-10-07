@@ -355,7 +355,8 @@
             RstickRIGHTBtn.TabIndex = 325;
             RstickRIGHTBtn.Text = "🠊";
             RstickRIGHTBtn.UseVisualStyleBackColor = false;
-            RstickRIGHTBtn.Click += RstickRIGHTBtn_Click;
+            RstickRIGHTBtn.MouseDown += RstickRIGHTBtn_MouseDown;
+            RstickRIGHTBtn.MouseUp += RstickMouseUp;
             // 
             // RstickLEFTBtn
             // 
@@ -371,7 +372,8 @@
             RstickLEFTBtn.TabIndex = 324;
             RstickLEFTBtn.Text = "🠈";
             RstickLEFTBtn.UseVisualStyleBackColor = false;
-            RstickLEFTBtn.Click += RstickLEFTBtn_Click;
+            RstickLEFTBtn.MouseDown += RstickLEFTBtn_MouseDown;
+            RstickLEFTBtn.MouseUp += RstickMouseUp;
             // 
             // RstickDOWNBtn
             // 
@@ -387,7 +389,8 @@
             RstickDOWNBtn.TabIndex = 323;
             RstickDOWNBtn.Text = "🠋";
             RstickDOWNBtn.UseVisualStyleBackColor = false;
-            RstickDOWNBtn.Click += RstickDOWNBtn_Click;
+            RstickDOWNBtn.MouseDown += RstickDOWNBtn_MouseDown;
+            RstickDOWNBtn.MouseUp += RstickMouseUp;
             // 
             // RstickUPBtn
             // 
@@ -403,7 +406,8 @@
             RstickUPBtn.TabIndex = 322;
             RstickUPBtn.Text = "🠉";
             RstickUPBtn.UseVisualStyleBackColor = false;
-            RstickUPBtn.Click += RstickUPBtn_Click;
+            RstickUPBtn.MouseDown += RstickUPBtn_MouseDown;
+            RstickUPBtn.MouseUp += RstickMouseUp;
             // 
             // LeftStickBtn
             // 
@@ -499,7 +503,8 @@
             LstickRIGHTBtn.TabIndex = 316;
             LstickRIGHTBtn.Text = "🠊";
             LstickRIGHTBtn.UseVisualStyleBackColor = false;
-            LstickRIGHTBtn.Click += LstickRIGHTBtn_Click;
+            LstickRIGHTBtn.MouseDown += LstickRIGHTBtn_MouseDown;
+            LstickRIGHTBtn.MouseUp += LstickMouseUp;
             // 
             // LstickLEFTBtn
             // 
@@ -515,7 +520,8 @@
             LstickLEFTBtn.TabIndex = 315;
             LstickLEFTBtn.Text = "🠈";
             LstickLEFTBtn.UseVisualStyleBackColor = false;
-            LstickLEFTBtn.Click += LstickLEFTBtn_Click;
+            LstickLEFTBtn.MouseDown += LstickLEFTBtn_MouseDown;
+            LstickLEFTBtn.MouseUp += LstickMouseUp;
             // 
             // LstickDOWNBtn
             // 
@@ -531,7 +537,8 @@
             LstickDOWNBtn.TabIndex = 314;
             LstickDOWNBtn.Text = "🠋";
             LstickDOWNBtn.UseVisualStyleBackColor = false;
-            LstickDOWNBtn.Click += LstickDOWNBtn_Click;
+            LstickDOWNBtn.MouseDown += LstickDOWNBtn_MouseDown;
+            LstickDOWNBtn.MouseUp += LstickMouseUp;
             // 
             // LstickUPBtn
             // 
@@ -547,7 +554,8 @@
             LstickUPBtn.TabIndex = 313;
             LstickUPBtn.Text = "🠉";
             LstickUPBtn.UseVisualStyleBackColor = false;
-            LstickUPBtn.Click += LstickUPBtn_Click;
+            LstickUPBtn.MouseDown += LstickUPBtn_MouseDown;
+            LstickUPBtn.MouseUp += LstickMouseUp;
             // 
             // Form1
             // 
