@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Switch Controller")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74a3707b6566f12c1933523a96b9e14f0a408371")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f7ac993f433266af077ca4c57182db8902c4dbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Switch Controller")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Switch Controller")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
