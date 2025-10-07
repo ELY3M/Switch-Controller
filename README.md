@@ -4,7 +4,12 @@
 This app will let you control your switch from your windows computer.   
 
 this app require you to have modified Nintendo Switch running Atmosphere 
-and sysbotbase   
+and sys-botbase   
 
 https://github.com/olliz0r/sys-botbase
+
+
+Credit for the buttons and controller code: 
+https://github.com/MyShiLingStar/ACNHPokerCore  
+
 
