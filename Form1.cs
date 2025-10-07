@@ -745,6 +745,11 @@ namespace Switch_Controller
 
         private void LstickMouseUp(object sender, MouseEventArgs e)
         {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
             L_StickUp = false;
             L_StickRight = false;
             L_StickLeft = false;
@@ -753,24 +758,44 @@ namespace Switch_Controller
 
         private void LstickUPBtn_MouseDown(object sender, MouseEventArgs e)
         {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
             L_StickUp = true;
             //LstickUp();
         }
 
         private void LstickRIGHTBtn_MouseDown(object sender, MouseEventArgs e)
         {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
             L_StickRight = true;
             //LstickRight();
         }
 
         private void LstickDOWNBtn_MouseDown(object sender, MouseEventArgs e)
         {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
             L_StickDown = true;
             //LstickDown();
         }
 
         private void LstickLEFTBtn_MouseDown(object sender, MouseEventArgs e)
         {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
             L_StickLeft = true;
             //LstickLeft();
 
