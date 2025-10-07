@@ -229,48 +229,8 @@ namespace Switch_Controller
             }
         }
 
-        private void capturebutton_Click(object sender, EventArgs e)
-        {
-            if (offline)
-            {
-                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
-                return;
-            }
-            SendString(socket, Capture());
-        }
 
-        private void homebutton_Click(object sender, EventArgs e)
-        {
-            if (offline)
-            {
-                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
-                return;
-            }
-            SendString(socket, Home());
-
-        }
-
-        private void plusbutton_Click(object sender, EventArgs e)
-        {
-            if (offline)
-            {
-                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
-                return;
-            }
-            SendString(socket, PLUS());
-        }
-
-        private void negbutton_Click(object sender, EventArgs e)
-        {
-            if (offline)
-            {
-                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
-                return;
-            }
-            SendString(socket, MINUS());
-        }
-
-        private void Xbutton_Click(object sender, EventArgs e)
+        private void XBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -280,17 +240,7 @@ namespace Switch_Controller
             SendString(socket, X());
         }
 
-        private void Ybutton_Click(object sender, EventArgs e)
-        {
-            if (offline)
-            {
-                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
-                return;
-            }
-            SendString(socket, Y());
-        }
-
-        private void Abutton_Click(object sender, EventArgs e)
+        private void ABtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -300,7 +250,7 @@ namespace Switch_Controller
             SendString(socket, A());
         }
 
-        private void Bbutton_Click(object sender, EventArgs e)
+        private void BBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -308,28 +258,69 @@ namespace Switch_Controller
                 return;
             }
             SendString(socket, B());
-
         }
 
-        private void UPbutton_Click(object sender, EventArgs e)
+        private void YBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
                 MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
                 return;
             }
-            SendString(socket, Up());
+            SendString(socket, Y());
         }
-        private void DOWNbutton_Click(object sender, EventArgs e)
+
+        private void LstickLEFTBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
                 MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
                 return;
             }
-            SendString(socket, Down());
+            SendString(socket, LstickL());
         }
-        private void LEFTbutton_Click(object sender, EventArgs e)
+
+        private void LstickRIGHTBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, LstickR());
+        }
+
+        private void LstickDOWNBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, LstickD());
+        }
+
+        private void LstickUPBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, LstickU());
+        }
+
+        private void LeftStickBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, LSTICK());
+        }
+
+        private void DleftBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -339,7 +330,7 @@ namespace Switch_Controller
             SendString(socket, Left());
         }
 
-        private void RIGHTbutton_Click(object sender, EventArgs e)
+        private void DrightBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -349,17 +340,27 @@ namespace Switch_Controller
             SendString(socket, Right());
         }
 
-        private void Lbutton_Click(object sender, EventArgs e)
+        private void DupBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
                 MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
                 return;
             }
-            SendString(socket, L());
+            SendString(socket, Up());
         }
 
-        private void ZLbutton_Click(object sender, EventArgs e)
+        private void DdownBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, Down());
+        }
+
+        private void ZLBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -369,7 +370,37 @@ namespace Switch_Controller
             SendString(socket, ZL());
         }
 
-        private void Rbutton_Click(object sender, EventArgs e)
+        private void LBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, L());
+        }
+
+        private void minusBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, MINUS());
+        }
+
+        private void caputureBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, Capture());
+        }
+
+        private void RBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -379,7 +410,7 @@ namespace Switch_Controller
             SendString(socket, R());
         }
 
-        private void ZRbutton_Click(object sender, EventArgs e)
+        private void ZRBtn_Click(object sender, EventArgs e)
         {
             if (offline)
             {
@@ -387,6 +418,82 @@ namespace Switch_Controller
                 return;
             }
             SendString(socket, ZR());
+        }
+
+        private void plusBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, PLUS());
+        }
+
+        private void HomeBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, Home());
+        }
+
+
+        private void DetachBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RstickLEFTBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, RstickL());
+        }
+
+        private void RstickRIGHTBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, RstickR());
+        }
+
+        private void RstickUPBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, RstickU());
+        }
+
+        private void RstickDOWNBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, RstickD());
+        }
+
+        private void RightStickBtn_Click(object sender, EventArgs e)
+        {
+            if (offline)
+            {
+                MessageBox.Show("You are offline! Please connect to Sys-botbase first.");
+                return;
+            }
+            SendString(socket, RSTICK());
         }
     }
 
